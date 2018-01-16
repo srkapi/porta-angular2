@@ -1,17 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var User = /** @class */ (function () {
-    function User(id, username, password, firstName, lastName, email, attempts, userRoles, permissions) {
-        this.permissions = [];
-        this.id = id;
+    function User(username, password, firstName, lastName, email, attempts) {
         this.username = username;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.attempts = attempts;
-        this.userRoles = userRoles;
-        this.permissions.push(permissions);
     }
     return User;
 }());

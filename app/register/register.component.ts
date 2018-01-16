@@ -5,6 +5,7 @@ import { AlertService, UserService } from '../_services/index';
 import {User} from "../_models/user";
 import {Permission} from "../_models/permission";
 import {Roles} from "../_models/roles";
+import {UserForm} from "../_models/UserForm";
 
 @Component({
     moduleId: module.id,
@@ -13,7 +14,7 @@ import {Roles} from "../_models/roles";
 
 
 export class RegisterComponent {
-    model = new User(0,"","","","","",0,null,null);
+    model = new UserForm("","","","","","","","");
     loading = false;
 
     constructor(
@@ -22,10 +23,13 @@ export class RegisterComponent {
         private alertService: AlertService) { }
 
     onSubmit(){
+        let user = new User(this.model.username,this.model.password,this.model.firstName,
+            this.model.lastName,this.model.email,this.model.attempts);
+
         var permision = new Permission(this.model.rolesPermissions);
         var rol = new Roles(this.model.userRoles, permision);
-        this.model.permissions.push( permision);
-        this.model.userRoles =rol;
+        user.permissions.push( permision);
+        user.roles.push(rol);
         this.userService.create(this.model)
             .subscribe(
                 data => {

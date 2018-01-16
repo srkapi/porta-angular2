@@ -4,13 +4,13 @@ import {Permission} from "./permission";
 export class Roles {
 
     public code: string;
-    public rolesPermissions: Permission = [];
+    public permissions: Permission[];
 
     constructor(code:string, pers:Permission
 
     ){
         this.code = code;
-        this.rolesPermissions.push(pers);
+        this.permissions.push(pers);
     }
 
 

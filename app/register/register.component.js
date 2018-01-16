@@ -15,20 +15,22 @@ var index_1 = require("../_services/index");
 var user_1 = require("../_models/user");
 var permission_1 = require("../_models/permission");
 var roles_1 = require("../_models/roles");
+var UserForm_1 = require("../_models/UserForm");
 var RegisterComponent = /** @class */ (function () {
     function RegisterComponent(router, userService, alertService) {
         this.router = router;
         this.userService = userService;
         this.alertService = alertService;
-        this.model = new user_1.User(0, "", "", "", "", "", 0, null, null);
+        this.model = new UserForm_1.UserForm("", "", "", "", "", "", "", "");
         this.loading = false;
     }
     RegisterComponent.prototype.onSubmit = function () {
         var _this = this;
+        var user = new user_1.User(this.model.username, this.model.password, this.model.firstName, this.model.lastName, this.model.email, this.model.attempts);
         var permision = new permission_1.Permission(this.model.rolesPermissions);
         var rol = new roles_1.Roles(this.model.userRoles, permision);
-        this.model.permissions.push(permision);
-        this.model.userRoles = rol;
+        user.permissions.push(permision);
+        user.roles.push(rol);
         this.userService.create(this.model)
             .subscribe(function (data) {
             _this.alertService.success('Registration successful', true);
