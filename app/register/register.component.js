@@ -14,22 +14,17 @@ var router_1 = require("@angular/router");
 var index_1 = require("../_services/index");
 var user_1 = require("../_models/user");
 var permission_1 = require("../_models/permission");
+var roles_1 = require("../_models/roles");
 var RegisterComponent = /** @class */ (function () {
     function RegisterComponent(router, userService, alertService) {
         this.router = router;
         this.userService = userService;
         this.alertService = alertService;
-        this.model = new user_1.User();
-        this.rolesUser = {};
-        this.permissionUser = new permission_1.Permission();
+        this.model = new user_1.User(0, "", "", "", "", "", 0, new roles_1.Roles("", new permission_1.Permission("")), new permission_1.Permission(""));
         this.loading = false;
     }
-    RegisterComponent.prototype.submit = function (userInfo) {
+    RegisterComponent.prototype.onSubmit = function () {
         var _this = this;
-        this.loading = true;
-        this.rolesUser = this.permissionUser;
-        this.model.userRoles = this.rolesUser;
-        this.model.permissions = this.permissionUser;
         this.userService.create(this.model)
             .subscribe(function (data) {
             _this.alertService.success('Registration successful', true);

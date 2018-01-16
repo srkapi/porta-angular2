@@ -13,21 +13,15 @@ import {Roles} from "../_models/roles";
 
 
 export class RegisterComponent {
-    private model = new User();
-    private rolesUser :any ={};
-    private permissionUser = new Permission();
-    private loading = false;
+    model = new User(0,"","","","","",0,new Roles("", new Permission("")),new Permission(""));
+    loading = false;
 
     constructor(
         private router: Router,
         private userService: UserService,
         private alertService: AlertService) { }
 
-    submit(userInfo) {
-        this.loading = true;
-        this.rolesUser= this.permissionUser;
-        this.model.userRoles =this.rolesUser;
-        this.model.permissions= this.permissionUser;
+    onSubmit(){
         this.userService.create(this.model)
             .subscribe(
                 data => {
