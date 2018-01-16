@@ -15,6 +15,8 @@ import {UserForm} from "../_models/UserForm";
 
 export class RegisterComponent {
     model = new UserForm("","","","","","","","");
+
+    
     loading = false;
 
     constructor(
