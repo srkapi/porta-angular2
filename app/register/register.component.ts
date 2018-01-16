@@ -13,7 +13,7 @@ import {Roles} from "../_models/roles";
 
 
 export class RegisterComponent {
-    model = new User(0,"","","","","",0,new Roles("", new Permission("")),new Permission(""));
+    model = new User(0,"","","","","",0,null,null);
     loading = false;
 
     constructor(
@@ -22,6 +22,10 @@ export class RegisterComponent {
         private alertService: AlertService) { }
 
     onSubmit(){
+        var permision = new Permission(this.model.rolesPermissions);
+        var rol = new Roles(this.model.userRoles, permision);
+        this.model.permissions.push( permision);
+        this.model.userRoles =rol;
         this.userService.create(this.model)
             .subscribe(
                 data => {

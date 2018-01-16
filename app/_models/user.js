@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var User = /** @class */ (function () {
     function User(id, username, password, firstName, lastName, email, attempts, userRoles, permissions) {
+        this.permissions = [];
         this.id = id;
         this.username = username;
         this.password = password;
@@ -10,7 +11,7 @@ var User = /** @class */ (function () {
         this.email = email;
         this.attempts = attempts;
         this.userRoles = userRoles;
-        this.permissions = permissions;
+        this.permissions.push(permissions);
     }
     return User;
 }());

@@ -25,7 +25,7 @@
         </div>
         <div class="form-group">
             <label for="roles">roles</label>
-            <select name="roles" class="form-control" [(ngModel)]="model.roles" required>
+            <select name="roles" class="form-control" [(ngModel)]="model.userRoles.code" required>
                 <option value="role.admin">admin</option>
                 <option value="role.seller.admin">seller.admin</option>
                 <option value="role.seller">seller</option>
@@ -35,7 +35,7 @@
 
         <div class="form-group">
             <label for="permission">permission</label>
-            <select name="permission" class="form-control" [(ngModel)]="model.permission" required>
+            <select name="permission" class="form-control" [(ngModel)]="model.rolesPermissions" required>
                 <option value="USER">User</option>
                 <option value="USER_ADMIN">Admin</option>
                 <option value="USER_SELLER_ADMIN">user seller</option>
