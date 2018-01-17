@@ -24,8 +24,8 @@ var UserService = /** @class */ (function () {
     UserService.prototype.create = function (user) {
         var body = JSON.stringify(user);
         console.log(body);
-        var header = new http_1.HttpHeaders({ 'Content-Type': 'application/json' });
-        return this.http.post('http://localhost:8888/users/', body, header);
+        var header = new Headers({ 'Content-Type': 'application/json' });
+        return this.http.post('http://localhost:8888/users/', body, { headers: header });
     };
     UserService.prototype.update = function (user) {
         return this.http.put('/api/users/' + user.id, user);
