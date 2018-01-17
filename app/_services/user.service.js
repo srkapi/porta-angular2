@@ -11,7 +11,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/common/http");
-var http_2 = require("@angular/http");
 var UserService = /** @class */ (function () {
     function UserService(http) {
         this.http = http;
@@ -23,10 +22,10 @@ var UserService = /** @class */ (function () {
         return this.http.get('/api/users/' + id);
     };
     UserService.prototype.create = function (user) {
-        var body = JSON.stringify({ user: user });
-        var headers = new http_2.Headers({ 'Content-Type': 'application/json' });
-        var options = new http_2.RequestOptions({ headers: headers });
-        return this.http.post('http://localhost:8888/users/', body, options);
+        var body = JSON.stringify(user);
+        console.log(body);
+        var header = new http_1.HttpHeaders({ 'Content-Type': 'application/json' });
+        return this.http.post('http://localhost:8888/users/', body, header);
     };
     UserService.prototype.update = function (user) {
         return this.http.put('/api/users/' + user.id, user);

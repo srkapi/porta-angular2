@@ -21,24 +21,28 @@ var RegisterComponent = /** @class */ (function () {
         this.router = router;
         this.userService = userService;
         this.alertService = alertService;
-        this.model = new UserForm_1.UserForm("", "", "", "", "", "", "", "");
+        this.model = new UserForm_1.UserForm("", "", "", "", "", "", "");
         this.loading = false;
     }
     RegisterComponent.prototype.onSubmit = function () {
-        var _this = this;
-        var user = new user_1.User(this.model.username, this.model.password, this.model.firstName, this.model.lastName, this.model.email, this.model.attempts);
+        var user = new user_1.User(this.model.username, this.model.password, this.model.firstName, this.model.lastName, this.model.email, 0);
         var permision = new permission_1.Permission(this.model.rolesPermissions);
         var rol = new roles_1.Roles(this.model.userRoles, permision);
         user.permissions.push(permision);
         user.roles.push(rol);
-        this.userService.create(this.model)
-            .subscribe(function (data) {
-            _this.alertService.success('Registration successful', true);
-            _this.router.navigate(['/login']);
-        }, function (error) {
-            _this.alertService.error(error);
-            _this.loading = false;
+        this.userService.create(user).subscribe(function (res) {
+            console.log(res);
+        }, function (err) {
+            console.log("Error occured");
         });
+        /*.subscribe(observable->{
+            this.alertService.success('Registration successful', true);
+            this.router.navigate(['/login']);
+        },
+        error -> {
+            this.alertService.error(error);
+            this.loading = false;
+        });*/
     };
     RegisterComponent = __decorate([
         core_1.Component({

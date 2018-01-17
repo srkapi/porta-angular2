@@ -4,7 +4,7 @@ import {Permission} from "./permission";
 export class Roles {
 
     public code: string;
-    public permissions: Permission[];
+    public permissions: Permission=[];
 
     constructor(code:string, pers:Permission
 

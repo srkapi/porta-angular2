@@ -9,8 +9,8 @@ export class User {
     public lastName: string;
     public email: string;
     public attempts: number;
-    public roles: Roles[];
-    public permissions: Permission[];
+    public roles: Roles=[];
+    public permissions: Permission=[];
 
     constructor(
                 username: string,

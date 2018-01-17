@@ -1,6 +1,5 @@
 ﻿import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Headers, RequestOptions } from '@angular/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 
 import { User } from '../_models/index';
 
@@ -17,10 +16,11 @@ export class UserService {
     }
 
     create(user: User) {
-        let body = JSON.stringify({ user });
-        let headers = new Headers({ 'Content-Type': 'application/json' });
-        let options = new RequestOptions({ headers: headers });
-        return this.http.post('http://localhost:8888/users/', body, options);
+         let body = JSON.stringify(user);
+        console.log(body);
+         let header=new HttpHeaders({'Content-Type': 'application/json'});
+
+        return this.http.post('http://localhost:8888/users/',body ,header);
     }
     update(user: User) {
         return this.http.put('/api/users/' + user.id, user);
@@ -29,4 +29,12 @@ export class UserService {
     delete(id: number) {
         return this.http.delete('/api/users/' + id);
     }
+
+  /*  private _getHeaders():Headers {
+        let header = new Headers({
+            'Content-Type': 'application/json'
+        });
+
+        return header;
+    }*/
 }

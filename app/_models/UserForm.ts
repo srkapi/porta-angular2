@@ -6,7 +6,6 @@ export class UserForm {
     public firstName: string;
     public lastName: string;
     public email: string;
-    public attempts: number;
     public userRoles: string;
     public rolesPermissions:string;
 
@@ -16,7 +15,6 @@ export class UserForm {
                 firstName: string,
                 lastName: string,
                 email: string,
-                attempts: number,
                 userRoles: string,
                 permissions: string) {
         this.username = username;
@@ -24,7 +22,6 @@ export class UserForm {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.attempts = attempts;
         this.userRoles = userRoles;
         this.rolesPermissions= permissions;
 
