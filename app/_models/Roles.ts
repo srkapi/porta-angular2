@@ -1,10 +1,10 @@
 
-import {Permission} from "./permission";
+import {Permission} from "./Permission";
 
 export class Roles {
 
     public code: string;
-    public permissions: Permission=[];
+    public permissions: Array<Permission> = new Array();
 
     constructor(code:string, pers:Permission
 

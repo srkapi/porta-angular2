@@ -1,5 +1,5 @@
-﻿import {Roles} from "./roles";
-import {Permission} from "./permission";
+﻿import {Roles} from "./Roles";
+import {Permission} from "./Permission";
 
 export class User {
     public id: number;
@@ -9,8 +9,8 @@ export class User {
     public lastName: string;
     public email: string;
     public attempts: number;
-    public roles: Roles=[];
-    public permissions: Permission=[];
+    public roles: Array<Roles> = new Array();
+    public permissions:Array<Permission> = new Array();
 
     constructor(
                 username: string,

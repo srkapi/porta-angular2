@@ -2,9 +2,9 @@
 import { Router } from '@angular/router';
 
 import { AlertService, UserService } from '../_services/index';
-import {User} from "../_models/user";
-import {Permission} from "../_models/permission";
-import {Roles} from "../_models/roles";
+import {User} from "../_models/User";
+import {Permission} from "../_models/Permission";
+import {Roles} from "../_models/Roles";
 import {UserForm} from "../_models/UserForm";
 import {observable} from "rxjs/symbol/observable";
 
@@ -41,14 +41,7 @@ export class RegisterComponent {
                 console.log("Error occured");
             }
         );
-            /*.subscribe(observable->{
-                this.alertService.success('Registration successful', true);
-                this.router.navigate(['/login']);
-            },
-            error -> {
-                this.alertService.error(error);
-                this.loading = false;
-            });*/
+
 
     }
 }

@@ -12,9 +12,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var index_1 = require("../_services/index");
-var user_1 = require("../_models/user");
-var permission_1 = require("../_models/permission");
-var roles_1 = require("../_models/roles");
+var User_1 = require("../_models/User");
+var Permission_1 = require("../_models/Permission");
+var Roles_1 = require("../_models/Roles");
 var UserForm_1 = require("../_models/UserForm");
 var RegisterComponent = /** @class */ (function () {
     function RegisterComponent(router, userService, alertService) {
@@ -25,9 +25,9 @@ var RegisterComponent = /** @class */ (function () {
         this.loading = false;
     }
     RegisterComponent.prototype.onSubmit = function () {
-        var user = new user_1.User(this.model.username, this.model.password, this.model.firstName, this.model.lastName, this.model.email, 0);
-        var permision = new permission_1.Permission(this.model.rolesPermissions);
-        var rol = new roles_1.Roles(this.model.userRoles, permision);
+        var user = new User_1.User(this.model.username, this.model.password, this.model.firstName, this.model.lastName, this.model.email, 0);
+        var permision = new Permission_1.Permission(this.model.rolesPermissions);
+        var rol = new Roles_1.Roles(this.model.userRoles, permision);
         user.permissions.push(permision);
         user.roles.push(rol);
         this.userService.create(user).subscribe(function (res) {
@@ -35,14 +35,6 @@ var RegisterComponent = /** @class */ (function () {
         }, function (err) {
             console.log("Error occured");
         });
-        /*.subscribe(observable->{
-            this.alertService.success('Registration successful', true);
-            this.router.navigate(['/login']);
-        },
-        error -> {
-            this.alertService.error(error);
-            this.loading = false;
-        });*/
     };
     RegisterComponent = __decorate([
         core_1.Component({

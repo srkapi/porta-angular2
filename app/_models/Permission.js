@@ -7,4 +7,4 @@ var Permission = /** @class */ (function () {
     return Permission;
 }());
 exports.Permission = Permission;
-//# sourceMappingURL=permission.js.map
+//# sourceMappingURL=Permission.js.map
