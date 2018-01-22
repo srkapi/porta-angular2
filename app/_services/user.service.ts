@@ -20,7 +20,7 @@ export class UserService {
          let body = JSON.stringify(user);
         console.log(body);
         return this.http.post('http://localhost:8888/users/',body ,{
-            headers: new HttpHeaders().set('Content-type', 'application/json'),
+            headers: new HttpHeaders().append('Content-type', 'application/json'),
         });
     }
     update(user: User) {

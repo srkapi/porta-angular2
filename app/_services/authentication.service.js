@@ -17,7 +17,7 @@ var AuthenticationService = /** @class */ (function () {
         this.http = http;
     }
     AuthenticationService.prototype.login = function (username, password) {
-        return this.http.post('/api/authenticate', { username: username, password: password })
+        return this.http.post('http://localhost:8888/auth', { username: username, password: password })
             .map(function (user) {
             // login successful if there's a jwt token in the response
             if (user && user.token) {
