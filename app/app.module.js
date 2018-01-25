@@ -24,6 +24,7 @@ var index_8 = require("./register/index");
 var footer_component_1 = require("./components/footer/footer.component");
 var navbar_component_1 = require("./components/navbar/navbar.component");
 var sidebar_component_1 = require("./components/sidebar/sidebar.component");
+var icons_component_1 = require("./icons/icons.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -38,6 +39,7 @@ var AppModule = (function () {
             declarations: [
                 app_component_1.AppComponent,
                 index_2.AlertComponent,
+                icons_component_1.IconsComponent,
                 index_6.HomeComponent,
                 index_7.LoginComponent,
                 index_8.RegisterComponent,

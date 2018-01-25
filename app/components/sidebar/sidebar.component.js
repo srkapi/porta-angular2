@@ -33,8 +33,8 @@ var SidebarComponent = (function () {
         core_1.Component({
             moduleId: module.id,
             selector: 'app-sidebar',
-            templateUrl: 'sidebar.component.html',
-            styleUrls: ['sidebar.component.css']
+            templateUrl: './sidebar.component.html',
+            styleUrls: ['./sidebar.component.css']
         }),
         __metadata("design:paramtypes", [])
     ], SidebarComponent);

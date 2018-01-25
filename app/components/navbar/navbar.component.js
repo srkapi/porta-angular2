@@ -68,8 +68,8 @@ var NavbarComponent = (function () {
         core_1.Component({
             moduleId: module.id,
             selector: 'app-navbar',
-            templateUrl: 'navbar.component.html',
-            styleUrls: ['navbar.component.css']
+            templateUrl: './navbar.component.html',
+            styleUrls: ['./navbar.component.css']
         }),
         __metadata("design:paramtypes", [common_1.Location, core_1.ElementRef])
     ], NavbarComponent);

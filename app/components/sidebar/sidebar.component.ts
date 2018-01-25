@@ -20,8 +20,8 @@ export const ROUTES: RouteInfo[] = [
 @Component({
     moduleId: module.id,
   selector: 'app-sidebar',
-  templateUrl: 'sidebar.component.html',
-  styleUrls: ['sidebar.component.css']
+  templateUrl: './sidebar.component.html',
+  styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
   menuItems: any[];

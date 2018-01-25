@@ -20,6 +20,7 @@ import {ComponentsModule} from "./components/components.module";
 import {FooterComponent} from "./components/footer/footer.component";
 import {NavbarComponent} from "./components/navbar/navbar.component";
 import {SidebarComponent} from "./components/sidebar/sidebar.component";
+import {IconsComponent} from "./icons/icons.component";
 
 @NgModule({
     imports: [
@@ -31,6 +32,7 @@ import {SidebarComponent} from "./components/sidebar/sidebar.component";
     declarations: [
         AppComponent,
         AlertComponent,
+        IconsComponent,
         HomeComponent,
         LoginComponent,
         RegisterComponent,
