@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var Subject_1 = require("rxjs/Subject");
-var AlertService = /** @class */ (function () {
+var AlertService = (function () {
     function AlertService(router) {
         var _this = this;
         this.router = router;

@@ -18,7 +18,7 @@ require("rxjs/add/operator/delay");
 require("rxjs/add/operator/mergeMap");
 require("rxjs/add/operator/materialize");
 require("rxjs/add/operator/dematerialize");
-var FakeBackendInterceptor = /** @class */ (function () {
+var FakeBackendInterceptor = (function () {
     function FakeBackendInterceptor() {
     }
     FakeBackendInterceptor.prototype.intercept = function (request, next) {

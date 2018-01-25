@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var index_1 = require("../_services/index");
-var LoginComponent = /** @class */ (function () {
+var LoginComponent = (function () {
     function LoginComponent(route, router, authenticationService, alertService) {
         this.route = route;
         this.router = router;
@@ -41,6 +41,7 @@ var LoginComponent = /** @class */ (function () {
     LoginComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
+            selector: 'login',
             templateUrl: 'login.component.html'
         }),
         __metadata("design:paramtypes", [router_1.ActivatedRoute,

@@ -21,7 +21,10 @@ var index_5 = require("./_services/index");
 var index_6 = require("./home/index");
 var index_7 = require("./login/index");
 var index_8 = require("./register/index");
-var AppModule = /** @class */ (function () {
+var footer_component_1 = require("./components/footer/footer.component");
+var navbar_component_1 = require("./components/navbar/navbar.component");
+var sidebar_component_1 = require("./components/sidebar/sidebar.component");
+var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
@@ -37,7 +40,10 @@ var AppModule = /** @class */ (function () {
                 index_2.AlertComponent,
                 index_6.HomeComponent,
                 index_7.LoginComponent,
-                index_8.RegisterComponent
+                index_8.RegisterComponent,
+                footer_component_1.FooterComponent,
+                navbar_component_1.NavbarComponent,
+                sidebar_component_1.SidebarComponent
             ],
             providers: [
                 index_3.AuthGuard,

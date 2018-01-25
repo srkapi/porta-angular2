@@ -16,6 +16,10 @@ import { AlertService, AuthenticationService, UserService } from './_services/in
 import { HomeComponent } from './home/index';
 import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
+import {ComponentsModule} from "./components/components.module";
+import {FooterComponent} from "./components/footer/footer.component";
+import {NavbarComponent} from "./components/navbar/navbar.component";
+import {SidebarComponent} from "./components/sidebar/sidebar.component";
 
 @NgModule({
     imports: [
@@ -29,7 +33,11 @@ import { RegisterComponent } from './register/index';
         AlertComponent,
         HomeComponent,
         LoginComponent,
-        RegisterComponent
+        RegisterComponent,
+        FooterComponent,
+        NavbarComponent,
+        SidebarComponent
+
     ],
     providers: [
         AuthGuard,

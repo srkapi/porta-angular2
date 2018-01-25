@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var UserForm = /** @class */ (function () {
+var UserForm = (function () {
     function UserForm(username, password, firstName, lastName, email, userRoles, permissions) {
         this.username = username;
         this.password = password;

@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var Permission = /** @class */ (function () {
+var Permission = (function () {
     function Permission(code) {
         this.code = code;
     }
     return Permission;
 }());
 exports.Permission = Permission;
-//# sourceMappingURL=permission.js.map
+//# sourceMappingURL=Permission.js.map
